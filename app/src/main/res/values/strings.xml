@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Property Listing</string>
+
+    <string name="base_url">https://rest.domain.com.au/searchservice.svc/</string>
+</resources>
