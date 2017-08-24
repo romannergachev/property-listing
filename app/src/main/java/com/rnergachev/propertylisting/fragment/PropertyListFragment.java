@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.rnergachev.propertylisting.PropertyApplication;
 import com.rnergachev.propertylisting.R;
+import com.rnergachev.propertylisting.activity.MainActivity;
 import com.rnergachev.propertylisting.adapter.ListAdapter;
 import com.rnergachev.propertylisting.base.BaseFragment;
 import com.rnergachev.propertylisting.data.model.PropertyItem;
@@ -54,6 +55,6 @@ public class PropertyListFragment extends BaseFragment<PropertyListViewModel> im
 
     @Override
     public void onClick(PropertyItem item) {
-        //((MainActivity) getActivity()).openDetail(item);
+        ((MainActivity) getActivity()).openPropertyDetailFragment(item);
     }
 }

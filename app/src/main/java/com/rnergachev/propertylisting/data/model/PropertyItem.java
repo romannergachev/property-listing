@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
  */
 public class PropertyItem implements Parcelable {
     @SerializedName("AdId")
-    private long id;
+    private int id;
     @SerializedName("AgencyLogoUrl")
     private String agencyLogoUrl;
     @SerializedName("Bathrooms")
@@ -35,7 +35,7 @@ public class PropertyItem implements Parcelable {
     public PropertyItem() {
     }
 
-    public PropertyItem(long id) {
+    public PropertyItem(int id) {
         this.id = id;
     }
 
@@ -94,7 +94,7 @@ public class PropertyItem implements Parcelable {
         return isElite;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -105,7 +105,7 @@ public class PropertyItem implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(this.id);
+        dest.writeInt(this.id);
         dest.writeString(this.agencyLogoUrl);
         dest.writeInt(this.bathrooms);
         dest.writeInt(this.bedrooms);
@@ -119,7 +119,7 @@ public class PropertyItem implements Parcelable {
     }
 
     protected PropertyItem(Parcel in) {
-        this.id = in.readLong();
+        this.id = in.readInt();
         this.agencyLogoUrl = in.readString();
         this.bathrooms = in.readInt();
         this.bedrooms = in.readInt();

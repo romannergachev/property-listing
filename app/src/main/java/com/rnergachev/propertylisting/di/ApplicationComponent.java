@@ -1,6 +1,7 @@
 package com.rnergachev.propertylisting.di;
 
 import com.rnergachev.propertylisting.activity.MainActivity;
+import com.rnergachev.propertylisting.fragment.PropertyDetailFragment;
 import com.rnergachev.propertylisting.fragment.PropertyListFragment;
 
 import javax.inject.Singleton;
@@ -15,4 +16,5 @@ import dagger.Component;
 public interface ApplicationComponent {
     void inject(MainActivity activity);
     void inject(PropertyListFragment fragment);
+    void inject(PropertyDetailFragment fragment);
 }
