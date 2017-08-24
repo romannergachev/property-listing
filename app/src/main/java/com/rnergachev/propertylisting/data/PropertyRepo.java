@@ -30,7 +30,7 @@ public class PropertyRepo {
      *
      * @return {@link Single} of {@link APIResponse} with list of properties
      */
-    public Single<APIResponse> getManufacturers() {
+    public Single<APIResponse> getProperties() {
         return api.getProperties(MODE, SUB, PCODES, STATE)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread());

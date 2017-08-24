@@ -9,14 +9,14 @@ import com.rnergachev.propertylisting.base.adapter.DataBindingViewHolder;
 import com.rnergachev.propertylisting.base.adapter.ObservableListAdapter;
 import com.rnergachev.propertylisting.data.model.ListItem;
 import com.rnergachev.propertylisting.handler.ListClickHandler;
-import com.rnergachev.propertylisting.viewmodel.ListViewModel;
+import com.rnergachev.propertylisting.viewmodel.PropertyListViewModel;
 
 /**
  * Recycler view adapter for items
  */
 public class ListAdapter extends ObservableListAdapter<ListAdapter.ViewHolder> {
 
-    private final ListViewModel viewModel;
+    private final PropertyListViewModel viewModel;
     private ListClickHandler handler;
 
     class ViewHolder extends DataBindingViewHolder<ListItem> implements View.OnClickListener {
@@ -31,7 +31,7 @@ public class ListAdapter extends ObservableListAdapter<ListAdapter.ViewHolder> {
         }
     }
 
-    public ListAdapter(ListViewModel viewModel, ListClickHandler handler) {
+    public ListAdapter(PropertyListViewModel viewModel, ListClickHandler handler) {
         this.viewModel = viewModel;
         this.handler = handler;
         observeList(viewModel.items);
