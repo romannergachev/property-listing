@@ -5,7 +5,7 @@
     <data>
         <variable
             name="item"
-            type="com.rnergachev.propertylisting.data.model.ListItem"/>
+            type="com.rnergachev.propertylisting.data.model.PropertyItem"/>
     </data>
 
     <TextView

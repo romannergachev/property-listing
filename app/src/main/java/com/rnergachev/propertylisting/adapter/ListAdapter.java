@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import com.rnergachev.propertylisting.R;
 import com.rnergachev.propertylisting.base.adapter.DataBindingViewHolder;
 import com.rnergachev.propertylisting.base.adapter.ObservableListAdapter;
-import com.rnergachev.propertylisting.data.model.ListItem;
+import com.rnergachev.propertylisting.data.model.PropertyItem;
 import com.rnergachev.propertylisting.handler.ListClickHandler;
 import com.rnergachev.propertylisting.viewmodel.PropertyListViewModel;
 
@@ -19,7 +19,7 @@ public class ListAdapter extends ObservableListAdapter<ListAdapter.ViewHolder> {
     private final PropertyListViewModel viewModel;
     private ListClickHandler handler;
 
-    class ViewHolder extends DataBindingViewHolder<ListItem> implements View.OnClickListener {
+    class ViewHolder extends DataBindingViewHolder<PropertyItem> implements View.OnClickListener {
         ViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);

@@ -1,6 +1,6 @@
 package com.rnergachev.propertylisting.handler;
 
-import com.rnergachev.propertylisting.data.model.ListItem;
+import com.rnergachev.propertylisting.data.model.PropertyItem;
 
 /**
  * List on click handler
@@ -12,5 +12,5 @@ public interface ListClickHandler {
      *
      * @param item that has been selected
      */
-    void onClick(ListItem item);
+    void onClick(PropertyItem item);
 }

@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.rnergachev.propertylisting.base.viewmodel.RxViewModel;
 import com.rnergachev.propertylisting.data.PropertyRepo;
-import com.rnergachev.propertylisting.data.model.ListItem;
+import com.rnergachev.propertylisting.data.model.PropertyItem;
 
 import javax.inject.Inject;
 
@@ -14,7 +14,7 @@ import javax.inject.Inject;
  * Properties list view model
  */
 public class PropertyListViewModel extends RxViewModel {
-    public final ObservableArrayList<ListItem> items;
+    public final ObservableArrayList<PropertyItem> items;
 
     private final PropertyRepo repo;
 

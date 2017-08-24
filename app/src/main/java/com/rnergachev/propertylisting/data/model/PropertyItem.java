@@ -8,7 +8,9 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Representation of the single item in the list
  */
-public class ListItem implements Parcelable {
+public class PropertyItem implements Parcelable {
+    @SerializedName("AdId")
+    private long id;
     @SerializedName("AgencyLogoUrl")
     private String agencyLogoUrl;
     @SerializedName("Bathrooms")
@@ -30,12 +32,16 @@ public class ListItem implements Parcelable {
     @SerializedName("IsElite")
     private int isElite;
 
-    public ListItem() {
+    public PropertyItem() {
     }
 
-    public ListItem(String agencyLogoUrl, int bathrooms, int bedrooms,
-                    int carspaces, String price, String address, String description,
-                    String firstThumbUrl, String secondThumbUrl, int isElite) {
+    public PropertyItem(long id) {
+        this.id = id;
+    }
+
+    public PropertyItem(String agencyLogoUrl, int bathrooms, int bedrooms,
+                        int carspaces, String price, String address, String description,
+                        String firstThumbUrl, String secondThumbUrl, int isElite) {
         this.agencyLogoUrl = agencyLogoUrl;
         this.bathrooms = bathrooms;
         this.bedrooms = bedrooms;
@@ -88,6 +94,10 @@ public class ListItem implements Parcelable {
         return isElite;
     }
 
+    public long getId() {
+        return id;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -95,6 +105,7 @@ public class ListItem implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(this.id);
         dest.writeString(this.agencyLogoUrl);
         dest.writeInt(this.bathrooms);
         dest.writeInt(this.bedrooms);
@@ -107,7 +118,8 @@ public class ListItem implements Parcelable {
         dest.writeInt(this.isElite);
     }
 
-    protected ListItem(Parcel in) {
+    protected PropertyItem(Parcel in) {
+        this.id = in.readLong();
         this.agencyLogoUrl = in.readString();
         this.bathrooms = in.readInt();
         this.bedrooms = in.readInt();
@@ -120,15 +132,15 @@ public class ListItem implements Parcelable {
         this.isElite = in.readInt();
     }
 
-    public static final Creator<ListItem> CREATOR = new Creator<ListItem>() {
+    public static final Creator<PropertyItem> CREATOR = new Creator<PropertyItem>() {
         @Override
-        public ListItem createFromParcel(Parcel source) {
-            return new ListItem(source);
+        public PropertyItem createFromParcel(Parcel source) {
+            return new PropertyItem(source);
         }
 
         @Override
-        public ListItem[] newArray(int size) {
-            return new ListItem[size];
+        public PropertyItem[] newArray(int size) {
+            return new PropertyItem[size];
         }
     };
 }

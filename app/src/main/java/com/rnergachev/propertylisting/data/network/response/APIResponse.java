@@ -1,7 +1,7 @@
 package com.rnergachev.propertylisting.data.network.response;
 
 import com.google.gson.annotations.SerializedName;
-import com.rnergachev.propertylisting.data.model.ListItem;
+import com.rnergachev.propertylisting.data.model.PropertyItem;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class APIResponse {
     private class ListingResult {
         @SerializedName("Listings")
-        private List<ListItem> listing;
+        private List<PropertyItem> listing;
     }
 
     @SerializedName("ListingResults")
@@ -20,7 +20,13 @@ public class APIResponse {
     public APIResponse() {
     }
 
-    public List<ListItem> getListing() {
+    public APIResponse(List<PropertyItem> items) {
+        result = new ListingResult();
+        result.listing = items;
+    }
+
+
+    public List<PropertyItem> getListing() {
         return result.listing;
     }
 }

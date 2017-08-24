@@ -11,7 +11,7 @@ import com.rnergachev.propertylisting.PropertyApplication;
 import com.rnergachev.propertylisting.R;
 import com.rnergachev.propertylisting.adapter.ListAdapter;
 import com.rnergachev.propertylisting.base.BaseFragment;
-import com.rnergachev.propertylisting.data.model.ListItem;
+import com.rnergachev.propertylisting.data.model.PropertyItem;
 import com.rnergachev.propertylisting.handler.ListClickHandler;
 import com.rnergachev.propertylisting.viewmodel.PropertyListViewModel;
 
@@ -53,7 +53,7 @@ public class PropertyListFragment extends BaseFragment<PropertyListViewModel> im
     }
 
     @Override
-    public void onClick(ListItem item) {
+    public void onClick(PropertyItem item) {
         //((MainActivity) getActivity()).openDetail(item);
     }
 }
