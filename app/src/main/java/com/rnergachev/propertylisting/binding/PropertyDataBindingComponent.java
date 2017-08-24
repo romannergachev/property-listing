@@ -12,6 +12,8 @@ import com.squareup.picasso.Picasso;
 public class PropertyDataBindingComponent implements DataBindingComponent {
     @BindingAdapter({"imageUrl"})
     public static void loadImage(ImageView view, String url) {
-        Picasso.with(view.getContext()).load(url).into(view);
+        if (url != null && !url.isEmpty()) {
+            Picasso.with(view.getContext()).load(url).into(view);
+        }
     }
 }

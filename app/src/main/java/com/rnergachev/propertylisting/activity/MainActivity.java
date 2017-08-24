@@ -20,10 +20,12 @@ public class MainActivity extends BaseActivity {
 
         setContentView(R.layout.main_activity);
 
-        getSupportFragmentManager()
-            .beginTransaction()
-            .add(R.id.fragment_container, PropertyListFragment.newInstance(), PROPERTY_LIST_FRAGMENT)
-            .addToBackStack(null)
-            .commit();
+        if (getSupportFragmentManager().findFragmentByTag(PROPERTY_LIST_FRAGMENT) == null) {
+            getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragment_container, PropertyListFragment.newInstance(), PROPERTY_LIST_FRAGMENT)
+                .addToBackStack(null)
+                .commit();
+        }
     }
 }

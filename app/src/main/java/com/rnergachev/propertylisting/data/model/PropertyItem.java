@@ -90,7 +90,7 @@ public class PropertyItem implements Parcelable {
         return secondThumbUrl;
     }
 
-    public int getIsElite() {
+    public int isElite() {
         return isElite;
     }
 

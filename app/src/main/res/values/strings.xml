@@ -2,4 +2,6 @@
     <string name="app_name">Property Listing</string>
 
     <string name="base_url">https://rest.domain.com.au/searchservice.svc/</string>
+
+    <string name="list_spaces">%1$d bed, %2$d bath, %3$d car</string>
 </resources>

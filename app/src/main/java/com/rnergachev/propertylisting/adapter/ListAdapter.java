@@ -16,6 +16,9 @@ import com.rnergachev.propertylisting.viewmodel.PropertyListViewModel;
  */
 public class ListAdapter extends ObservableListAdapter<ListAdapter.ViewHolder> {
 
+    private static final int ELITE    = 1;
+    private static final int STANDARD = 0;
+
     private final PropertyListViewModel viewModel;
     private ListClickHandler handler;
 
@@ -39,7 +42,10 @@ public class ListAdapter extends ObservableListAdapter<ListAdapter.ViewHolder> {
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false));
+
+        int layoutId = (viewType == ELITE) ? R.layout.elite_list_item : R.layout.standard_list_item;
+
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false));
     }
 
     @Override
@@ -50,5 +56,10 @@ public class ListAdapter extends ObservableListAdapter<ListAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return viewModel.items.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return viewModel.items.get(position).isElite();
     }
 }
