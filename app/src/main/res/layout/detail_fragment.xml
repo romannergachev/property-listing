@@ -18,6 +18,7 @@
             android:id="@+id/photo"
             android:layout_width="110dp"
             android:layout_height="110dp"
+            android:transitionName="transition"
             android:scaleType="centerCrop"
             app:imageUrl="@{item.firstThumbUrl}"
             tools:src="@mipmap/ic_launcher"/>

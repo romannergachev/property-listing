@@ -32,6 +32,7 @@
                 android:layout_width="160dp"
                 android:layout_height="110dp"
                 app:imageUrl="@{item.firstThumbUrl}"
+                android:transitionName="transition"
                 android:scaleType="centerCrop"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"

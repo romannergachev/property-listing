@@ -5,5 +5,5 @@
 
     <string name="list_spaces">%1$d bed, %2$d bath, %3$d car</string>
 
-    <string name="id">%1$d</string>
+    <string name="id">Ad id is %1$d</string>
 </resources>
