@@ -25,7 +25,7 @@ public abstract class ListViewModel extends RxViewModel {
 
     protected void loadItems(Single<APIResponse> supplier) {
         subscriptions.add(supplier.subscribe(
-            response -> items.addAll(response.getItems()),
+            response -> items.addAll(response.getListing()),
             e -> Log.e(getClass().getName(), "Loading failed", e)
         ));
     }
