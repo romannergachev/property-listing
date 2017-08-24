@@ -52,12 +52,14 @@ public class MainActivity extends BaseActivity {
 
         if (findViewById(R.id.fragment_detail_container) == null) {
             fm.beginTransaction()
+                .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
                 .replace(R.id.fragment_list_container, PropertyDetailFragment.newInstance(item), PROPERTY_DETAIL_FRAGMENT)
                 .addToBackStack(null)
                 .commit();
         } else {
             fm.beginTransaction()
-                .add(R.id.fragment_detail_container, PropertyDetailFragment.newInstance(item), PROPERTY_DETAIL_FRAGMENT)
+                .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
+                .replace(R.id.fragment_detail_container, PropertyDetailFragment.newInstance(item), PROPERTY_DETAIL_FRAGMENT)
                 .commit();
         }
     }
