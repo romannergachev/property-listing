@@ -6,7 +6,7 @@
     <data>
         <variable
             name="item"
-            type="com.rnergachev.propertylisting.data.model.PropertyItem"/>
+            type="com.rnergachev.propertylisting.data.modelю"/>
     </data>
 
     <android.support.v7.widget.CardView

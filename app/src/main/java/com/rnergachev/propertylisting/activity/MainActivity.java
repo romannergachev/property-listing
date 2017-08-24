@@ -23,7 +23,7 @@ public class MainActivity extends BaseActivity {
         if (getSupportFragmentManager().findFragmentByTag(PROPERTY_LIST_FRAGMENT) == null) {
             getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fragment_container, PropertyListFragment.newInstance(), PROPERTY_LIST_FRAGMENT)
+                .add(R.id.fragment_list_container, PropertyListFragment.newInstance(), PROPERTY_LIST_FRAGMENT)
                 .addToBackStack(null)
                 .commit();
         }
