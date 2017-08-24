@@ -31,7 +31,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             vh = new ViewModelHolder();
             fm.beginTransaction()
                 .add(vh, VIEW_HOLDER)
-                .commit();
+                .commitNow();
         }
 
         return vh;

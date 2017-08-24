@@ -17,17 +17,9 @@ import com.rnergachev.propertylisting.viewmodel.PropertyDetailViewModel;
 public class PropertyDetailFragment extends BaseFragment<PropertyDetailViewModel> {
     private static final String PROPERTY_ARG = "PROPERTY";
 
-    private PropertyItem item;
-
     @Override
     protected int getLayoutId() {
         return R.layout.detail_fragment;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        item = getArguments().getParcelable(PROPERTY_ARG);
     }
 
     @Override
@@ -55,7 +47,6 @@ public class PropertyDetailFragment extends BaseFragment<PropertyDetailViewModel
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        getViewModel().item.set(item);
-        item = null;
+        getViewModel().item.set(getArguments().getParcelable(PROPERTY_ARG));
     }
 }

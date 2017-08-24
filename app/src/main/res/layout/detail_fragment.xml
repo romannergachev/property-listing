@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="item"
-            type="com.rnergachev.propertylisting.data.model.PropertyItem"/>
+            name="model"
+            type="com.rnergachev.propertylisting.viewmodel.PropertyDetailViewModel"/>
     </data>
 
     <LinearLayout
@@ -20,17 +20,17 @@
             android:layout_height="110dp"
             android:transitionName="transition"
             android:scaleType="centerCrop"
-            app:imageUrl="@{item.firstThumbUrl}"
+            app:imageUrl="@{model.item.firstThumbUrl}"
             tools:src="@mipmap/ic_launcher"/>
 
         <TextView
             android:id="@+id/spaces"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{@string/id(item.id)}"
+            android:text="@{@string/id(model.item.id)}"
             android:textColor="@android:color/black"
             android:gravity="center_horizontal"
-            android:textSize="14sp"
+            android:textSize="34sp"
             android:textStyle="bold"
             tools:text="ID"/>
 

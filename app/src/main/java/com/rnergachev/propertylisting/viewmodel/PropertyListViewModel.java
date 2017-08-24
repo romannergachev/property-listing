@@ -28,6 +28,9 @@ public class PropertyListViewModel extends RxViewModel {
      * Loads properties into list
      */
     public void loadProperty() {
+        if (items.size() > 0) {
+            return;
+        }
         subscriptions.add(repo.getProperties().subscribe(
             response -> items.addAll(response.getListing()),
             e -> Log.e(getClass().getName(), "Loading failed", e)

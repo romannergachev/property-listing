@@ -64,7 +64,7 @@
 
             <TextView
                 android:id="@+id/price"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@{item.price}"
                 app:layout_constraintLeft_toLeftOf="@id/photo"
@@ -73,11 +73,13 @@
                 android:textColor="@color/standardAccent"
                 android:textStyle="bold"
                 android:textSize="14sp"
+                android:maxLines="1"
+                android:ellipsize="end"
                 tools:text="$1,365,000"/>
 
             <TextView
                 android:id="@+id/spaces"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@{@string/list_spaces(item.bedrooms, item.bathrooms, item.carspaces)}"
                 app:layout_constraintLeft_toLeftOf="@id/price"
@@ -85,17 +87,21 @@
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:textSize="14sp"
+                android:maxLines="1"
+                android:ellipsize="end"
                 tools:text="0 bed, 0 bath, 1 car"/>
 
             <TextView
                 android:id="@+id/address"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@{item.address}"
                 app:layout_constraintLeft_toLeftOf="@id/price"
                 app:layout_constraintTop_toBottomOf="@id/spaces"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
+                android:maxLines="1"
+                android:ellipsize="end"
                 tools:text="This is an address"/>
 
             <ImageView

@@ -25,7 +25,6 @@ public abstract class BaseFragment<VM extends BaseViewModel> extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         injectDependencies();
     }
 
@@ -57,8 +56,10 @@ public abstract class BaseFragment<VM extends BaseViewModel> extends Fragment {
     public void onDestroy() {
         super.onDestroy();
 
-        ViewModelHolder vh = ((BaseActivity) getActivity()).getViewModelHolder();
-        vh.detach(this.getClass().getCanonicalName());
+        if(!getActivity().isChangingConfigurations()) {
+            ViewModelHolder vh = ((BaseActivity) getActivity()).getViewModelHolder();
+            vh.detach(this.getClass().getCanonicalName());
+        }
     }
 
     protected VM createViewModel() {
